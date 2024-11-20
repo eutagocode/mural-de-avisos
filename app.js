@@ -1,38 +1,19 @@
+// Importação de pacotes
 import express from "express";
-import { UsersCrud } from "./model/users.js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+// Importação de arquivos
+import router from "./routes/api.js";
+// Correção do dirname para a aplicação
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// Variáveis globais
 const app = express();
 const PORT = 3000;
+// Middlewares
 app.use(express.json());
-const users = new UsersCrud();
+app.use("/api", router);
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/all", (req, res) => {
-    res.json(JSON.stringify(users.getAll()));
-});
-
-app.post("/new", (req, res) => {
-    const name = req.body.name;
-    const email = req.body.email;
-
-    if (name === "" || email === "") return;
-
-    users.newUser(name, email);
-
-    res.send(users);
-});
-
-app.put("/update/:id", (req, res) => {
-    const id = req.params.id;
-    const name = req.body.name;
-    const email = req.body.email;
-
-    users.updateUser(id, name, email);
-
-    res.send("Usuário localizado com sucesso!");
-});
-
-app.delete("/delete/:id", (req, res) => {
-    users.deleteUser(req.params.id);
-    res.send("Usuário apagado com sucesso!");
-});
-
+// Passando a porta para o servidor
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
