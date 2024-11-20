@@ -1,22 +1,12 @@
 import express from "express";
-import { v7 } from "uuid";
-const uuid = v7;
+import { UsersCrud } from "./model/users.js";
 const app = express();
 const PORT = 3000;
 app.use(express.json());
-
-class Users {
-    constructor(name, email) {
-        this.id = uuid();
-        this.name = name;
-        this.email = email;
-    }
-}
-
-const users = [];
+const users = new UsersCrud();
 
 app.get("/all", (req, res) => {
-    res.json(JSON.stringify(users));
+    res.json(JSON.stringify(users.getAll()));
 });
 
 app.post("/new", (req, res) => {
@@ -25,11 +15,24 @@ app.post("/new", (req, res) => {
 
     if (name === "" || email === "") return;
 
-    const user = new Users(name, email);
+    users.newUser(name, email);
 
-    users.push(user);
+    res.send(users);
+});
 
-    res.send("Usuário adicionado com sucesso!");
+app.put("/update/:id", (req, res) => {
+    const id = req.params.id;
+    const name = req.body.name;
+    const email = req.body.email;
+
+    users.updateUser(id, name, email);
+
+    res.send("Usuário localizado com sucesso!");
+});
+
+app.delete("/delete/:id", (req, res) => {
+    users.deleteUser(req.params.id);
+    res.send("Usuário apagado com sucesso!");
 });
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
