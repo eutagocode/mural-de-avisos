@@ -1,10 +1,13 @@
 // Importação de pacotes
 import express from "express";
+import cors from "cors";
 // Importação de arquivos
 import { UsersCrud } from "../model/users.js";
 // Variáveis globais
 const router = express.Router();
 const users = new UsersCrud();
+// Middleware
+router.use(cors());
 
 // Lendo usuários
 router.get("/all", (req, res) => {
