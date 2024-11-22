@@ -3,14 +3,15 @@ const getUsers = async () => {
     const data = await response.json();
     const users = JSON.parse(data);
     let userElements = "";
+    const date = new Date();
 
     for (const user of users) {
         const userElement = `
 <div id="${user.id}" class="card">
     <header class="header_card">
-        <p>21/11/2024</p>
+        <p>${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}</p>
         <div class="actions_card">
-            <button>
+            <button onclick="editUser(this)">
                 <img
                     src="./src/assets/images/editsquare.svg"
                     alt="ícone de lapis"
@@ -73,4 +74,8 @@ const deleteUser = async (element) => {
     }
 
     getUsers();
+};
+
+const editUser = async (element) => {
+    console.log(element);
 };
