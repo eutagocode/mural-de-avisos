@@ -1,0 +1,91 @@
+#users {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 333px);
+    grid-auto-rows: 130px;
+    gap: 1rem;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 1rem;
+    background: var(--color-white);
+}
+
+.card .header_card {
+    width: 100%;
+    padding-left: 0.8rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
+.card .header_card p {
+    color: var(--color-gray100);
+    font-family: var(--semibold);
+    font-size: 0.9rem;
+}
+
+.card .header_card .actions_card {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+}
+
+.card .header_card .actions_card button {
+    width: 31px;
+    height: 31px;
+    background: var(--primary-color);
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.card .header_card .actions_card button:nth-child(1) {
+    border-radius: 0 0 0 1rem;
+}
+
+.card .header_card .actions_card button:nth-child(2) {
+    border-radius: 0 1rem 0 0;
+    background: var(--color-red);
+}
+
+.card .main_card {
+    width: 100%;
+    height: calc(100% - 31px);
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.card .main_card .profile_content {
+    width: 80px;
+    height: 80px;
+    background: var(--color-gray50);
+    border-radius: 50rem;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.card .main_card .profile_content img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.card .main_card .showcase-text h2 {
+    color: var(--color-black);
+    font-family: var(--black);
+    font-size: 1.4rem;
+}
+
+.card .main_card .showcase-text p {
+    color: var(--color-gray100);
+    font-family: var(--medium);
+    font-size: 1rem;
+}
