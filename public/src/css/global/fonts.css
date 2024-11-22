@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Medium";
+    src: url("../../assets/fonts/Figtree-Medium.woff");
+}
+
+@font-face {
+    font-family: "SemiBold";
+    src: url("../../assets/fonts/Figtree-SemiBold.woff");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../../assets/fonts/Figtree-Bold.woff");
+}
+
+@font-face {
+    font-family: "Black";
+    src: url("../../assets/fonts/Figtree-Black.woff");
+}

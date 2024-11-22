@@ -1,0 +1,14 @@
+:root {
+    --bg-color: #fbfbfb;
+    --primary-color: #3686ff;
+    --color-red: #dc143c;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray50: #f1f1f1;
+    --color-gray100: #a7a7a7;
+
+    --medium: "Medium";
+    --semibold: "SemiBold";
+    --bold: "Bold";
+    --black: "Black";
+}
