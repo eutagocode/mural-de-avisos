@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/css/index.css" />
+        <title>Usuários</title>
+    </head>
+    <body>
+        <header class="header_page">
+            <h1 class="logo">tago<span>Code</span></h1>
+            <nav class="nav_content">
+                <li class="nav_item">
+                    <img
+                        src="./src/assets/images/home.svg"
+                        alt="ícone de casa"
+                    />
+                    <a href="#">Home</a>
+                </li>
+                <li class="nav_item">
+                    <img
+                        src="./src/assets/images/notification.svg"
+                        alt="ícone de notificação"
+                    />
+                    <a href="#">Notifications</a>
+                </li>
+                <li class="nav_item">
+                    <img
+                        src="./src/assets/images/message.svg"
+                        alt="ícone de mensagem"
+                    />
+                    <a href="#">Messages</a>
+                </li>
+                <li class="nav_item">
+                    <img
+                        src="./src/assets/images/call.svg"
+                        alt="ícone de telefone"
+                    />
+                    <a href="#">Contact</a>
+                </li>
+            </nav>
+        </header>
+        <main class="main_page">
+            <div class="main_content">
+                <div class="interactions">
+                    <h3>Users</h3>
+                    <div class="add_user_content">
+                        <input
+                            type="text"
+                            class="input-name"
+                            placeholder="Name:"
+                            id="input-name"
+                        />
+                        <input
+                            type="email"
+                            class="input-email"
+                            placeholder="E-mail:"
+                            id="input-email"
+                        />
+                        <button onclick="createUser()">
+                            <img
+                                src="./src/assets/images/adduser.svg"
+                                alt="ícone de mais ao lado do ícone de usuário"
+                            />
+                            <p>New user</p>
+                        </button>
+                    </div>
+                </div>
+                <section id="users"></section>
+            </div>
+        </main>
+        <script src="./src/js/index.js"></script>
+    </body>
+</html>
