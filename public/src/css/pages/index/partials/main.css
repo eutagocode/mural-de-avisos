@@ -40,7 +40,7 @@
     background: var(--color-gray50);
     border-radius: 50rem;
     padding: 0 1.5rem;
-    font-family: var(--semibold);
+    font-family: var(--medium);
     font-size: 1rem;
     color: var(--color-black);
 }
