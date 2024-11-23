@@ -1,0 +1,54 @@
+.edit_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-content: center;
+}
+
+.edit_container .edit_form {
+    width: 350px;
+    height: auto;
+    background: var(--color-white);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.edit_container .edit_form h3 {
+    color: var(--color-black);
+    font-family: var(--bold);
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.edit_container .edit_form :is(input, button) {
+    width: 100%;
+    height: 50px;
+    background: var(--color-gray50);
+    border-radius: 50rem;
+    padding: 0 1.5rem;
+    color: var(--color-black);
+    font-family: var(--semibold);
+    font-size: 1rem;
+}
+
+.edit_container .edit_form input::placeholder {
+    color: var(--color-gray100);
+}
+
+.edit_container .edit_form button {
+    padding: 0;
+    background: var(--primary-color);
+    font-family: var(--bold);
+    font-size: 1rem;
+    color: var(--color-white);
+    cursor: pointer;
+}
