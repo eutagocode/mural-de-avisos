@@ -48,14 +48,16 @@
                         <input
                             type="text"
                             class="input-name"
-                            placeholder="Name:"
+                            placeholder="Name"
                             id="input-name"
+                            required
                         />
                         <input
                             type="email"
                             class="input-email"
-                            placeholder="E-mail:"
+                            placeholder="E-mail"
                             id="input-email"
+                            required
                         />
                         <button onclick="createUser()">
                             <img
@@ -69,6 +71,18 @@
                 <section id="users"></section>
             </div>
         </main>
+        <div id="editContainer" class="edit_container">
+            <form class="edit_form">
+                <h3>Edite o seu usuário</h3>
+                <input type="text" placeholder="Name" id="form-input-name" />
+                <input
+                    type="email"
+                    placeholder="E-mail"
+                    id="form-input-email"
+                />
+                <button onclick="editUser(this)">CONFIRMAR</button>
+            </form>
+        </div>
         <script src="./src/js/index.js"></script>
     </body>
 </html>
