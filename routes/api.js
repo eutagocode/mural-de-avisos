@@ -1,13 +1,10 @@
 // Importação de pacotes
 import express from "express";
-import cors from "cors";
 // Importação de arquivos
 import { UsersCrud } from "../model/users.js";
 // Variáveis globais
 const router = express.Router();
 const users = new UsersCrud();
-// Middleware
-router.use(cors());
 
 // Lendo usuários
 router.get("/all", (req, res) => {
@@ -16,8 +13,7 @@ router.get("/all", (req, res) => {
 
 // Criando usuários
 router.post("/new", (req, res) => {
-    const name = req.body.name;
-    const email = req.body.email;
+    const { name, email } = req.body;
 
     if (name === "" || email === "") return;
 
@@ -28,9 +24,7 @@ router.post("/new", (req, res) => {
 
 // Atualizando usuários
 router.put("/update/:id", (req, res) => {
-    const id = req.params.id;
-    const name = req.body.name;
-    const email = req.body.email;
+    const { id, name, email } = req.params;
 
     users.updateUser(id, name, email);
 

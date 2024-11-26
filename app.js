@@ -1,5 +1,6 @@
 // Importação de pacotes
 import express from "express";
+import cors from "cors";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 // Importação de arquivos
@@ -13,6 +14,7 @@ const PORT = 3000;
 // Middlewares
 app.use(express.json());
 app.use("/api", router);
+app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Passando a porta para o servidor

@@ -1,6 +1,6 @@
 // Importação do UUID
-import { v6 } from "uuid";
-const uuid = v6;
+import { v7 } from "uuid";
+const uuid = v7;
 
 // Modelo dos usuários
 class Users {
@@ -28,19 +28,19 @@ export class UsersCrud extends Users {
 
     // Método para atualizar os usuários
     updateUser(id, name, email) {
-        const user = this.users.filter((user) => user.id == id);
+        const user = this.users.filter(({ id }) => id == id);
         if (user < 0 || user == "") return;
         user.map((user) => {
-            if (name == "") name = user.name;
-            if (email == "") email = user.email;
             user.name = name;
             user.email = email;
+            if (name == "") name = user.name;
+            if (email == "") email = user.email;
         });
     }
 
     // Método para apagar os usuários
     deleteUser(id) {
-        const userIndex = this.users.findIndex((user) => user.id == id);
+        const userIndex = this.users.findIndex(({ id }) => id == id);
         if (userIndex < 0) return;
         this.users.splice(userIndex, 1);
     }
